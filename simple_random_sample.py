@@ -2,18 +2,16 @@ import pandas as pd
 import time
 from random import seed
 from random import randint
+import sys
+import random
 
-def current_milli_time():
-    """
-    Just used for the seed
-    """
-    return round(time.time() * 1000)
-
+seed = random.randrange(sys.maxsize)
+random.seed(seed)
 
 #simple random sampling
 
 def simple_random_sample(df, sample_size):
-    seed = seed(current_milli_time())
+    
     length_of_df = len(df)
     random_sample = []
     
